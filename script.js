@@ -1,5 +1,5 @@
 console.log("tic tac")
-let music=new Audio("music.mp3")
+let music1=new Audio("music.mp3")
 let audioturn = new Audio("ting.mp3")
 let gameover = new Audio("gameover.mp3")
 let turn = " X"
@@ -65,4 +65,15 @@ reset.addEventListener('click',()=>{
     document.getElementsByClassName("info")[0].innerText="Turn for"+turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="0px"
     document.querySelector(".line").style.width="0vw";
+})
+//mute music
+speaker.addEventListener('click',()=>{
+    let text=document.getElementById("speaker")
+    if(text.innerText==="Audio"){
+        music1.play();
+        text.innerText="Mute"
+    }else{
+        music1.pause()
+        text.innerText="Audio"
+    }
 })
